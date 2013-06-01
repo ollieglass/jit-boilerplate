@@ -11,36 +11,23 @@
 
     <script>
     // data
-    var json = {
-        id: "1",
+    var json = [{
+        id: "A",
         name: "A",
-        children: [
-            {
-                id: "2",
-                name: "B",
-                children: [
-                    {
-                        id: "3",
-                        name: "C",
-                    }
-                ]
-            },
-            {
-                id: "3",
-                name: "C",
-                children: [
-                    {
-                        id: "4",
-                        name: "D",
-                   }
-                ]
-            },
-            {
-                id: "4",
-                name: "D",
-            }
-        ]
-    };
+        adjacencies: ["B", "C", "D"]
+    }, {
+        id: "B",
+        name: "B",
+        adjacencies: ["A", "C", "D"]
+    }, {
+        id: "C",
+        name: "C",
+        adjacencies: ["A", "B", "D"]
+    }, {
+        id: "D",
+        name: "D",
+        adjacencies: ["A", "B", "C"]
+    }];
 
     // canvas / ie stuff
     var labelType, useGradients, nativeTextSupport, animate;
